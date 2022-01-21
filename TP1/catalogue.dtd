@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT catalogue (article+) >
+<!ATTLIST catalogue année CDATA "2021" >
+
+<!ELEMENT article (Désignation,photo,description?,prixTTC,taillesDisp,détail) >
+
+<!ATTLIST article ref ID #REQUIRED >
+<!ATTLIST article catégorie (Fille|Garçon) "Garçon">
+
+<!ELEMENT Désignation (#PCDATA) >
+<!ELEMENT photo EMPTY >
+<!ATTLIST photo source CDATA #REQUIRED>
+
+<!ELEMENT description (#PCDATA) >
+<!ELEMENT taillesDisp (#PCDATA)>
+<!ELEMENT détail (#PCDATA)>
+<!ELEMENT prixTTC (#PCDATA) >

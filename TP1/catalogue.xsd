@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="catalogue">
+         <xs:complexType>
+             <xs:sequence>
+                 <xs:element name="article" minOccurs="1" maxOccurs="unbounded">
+                     <xs:complexType mixed="true">
+                         <xs:sequence>
+                             <xs:element name="Désignation">
+                                 <xs:simpleType>
+                                     <xs:restriction base="xs:string">
+                                         <xs:maxLength value="100"></xs:maxLength>
+                                     </xs:restriction>
+                                 </xs:simpleType>
+                             </xs:element>
+                             <xs:element name="taillesDisp">
+                                 <xs:complexType> 
+                                     <xs:sequence>
+                                         <xs:element name="taille" maxOccurs="unbounded">
+                                             <xs:simpleType>
+                                                 <xs:restriction base="xs:string">
+                                                     <xs:enumeration value="Moins 2 ans"/>
+                                                     <xs:enumeration value="4 ans"/>
+                                                     <xs:enumeration value="6 ans"/>
+                                                     <xs:enumeration value="8 ans"/>
+                                                     <xs:enumeration value="10 ans"/>
+                                                 </xs:restriction>
+                                             </xs:simpleType>
+                                         </xs:element>
+                                     </xs:sequence>
+                                 </xs:complexType>
+                             </xs:element>
+                             <xs:element name="photo">
+                                 <xs:complexType>
+                                     <xs:attribute name="source" type="xs:string" use="required"></xs:attribute>
+                                 </xs:complexType>
+                             </xs:element>
+                           
+                             <xs:element name="prixTTC">
+                                 <xs:simpleType>
+                                     <xs:restriction base="xs:decimal">
+                                         <xs:fractionDigits value="2"></xs:fractionDigits>
+                                         <xs:minInclusive value="0"></xs:minInclusive>
+                                     </xs:restriction>
+                                 </xs:simpleType>
+                             </xs:element>
+                             
+                             <xs:element name="description" type="xs:string" minOccurs="0"></xs:element>
+                             
+                             <xs:element name="détail">
+                                 <xs:simpleType>
+                                     <xs:restriction base="xs:string">
+                                         <xs:pattern value="(.)+\.pdf"></xs:pattern>
+                                     </xs:restriction>
+                                 </xs:simpleType>
+                             </xs:element>
+                         </xs:sequence>
+                         <xs:attribute name="ref">
+                             <xs:simpleType>
+                                 <xs:restriction base="xs:ID">
+                                     <xs:pattern value="A[0-9]{3}"></xs:pattern>
+                                 </xs:restriction>
+                             </xs:simpleType>
+                         </xs:attribute>
+                         <xs:attribute name="catégorie" default="Garçon">
+                             <xs:simpleType>
+                                 <xs:restriction base="xs:string">
+                                     <xs:enumeration value="Fille"></xs:enumeration>
+                                     <xs:enumeration value="Garçon"></xs:enumeration>
+                                 </xs:restriction>
+                             </xs:simpleType>
+                         </xs:attribute>
+                         
+                     </xs:complexType>
+                 </xs:element>
+             </xs:sequence>
+             <xs:attribute name="année" default="2021">
+                 <xs:simpleType>
+                     <xs:restriction base="xs:int">
+                         <xs:pattern value="[0-9]{4}"></xs:pattern>
+                     </xs:restriction>
+                 </xs:simpleType>
+             </xs:attribute>
+         </xs:complexType>  
+    </xs:element>
+</xs:schema>
+

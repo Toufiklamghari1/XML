@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="musée.xsl"?>
+
+<musée>
+    <objet code="Cos1">
+        <titre>Caftan de mariage</titre>
+        <type>Costume</type>
+		<fabriquéEn>
+        	<matière>velours de soie </matière>
+        	<matière>fil d'or</matière>
+		</fabriquéEn>
+        <siècle> 18</siècle>
+		<photo source="photos/caftan1.gif"/>
+    </objet>
+
+    <objet code="man1">
+        <titre>Le plus petit coran dans le monde</titre>
+        <type>Manuscrit</type>
+        <siècle>17 </siècle>
+        <photo source="photos/coran1.gif" />
+        <photo source="photos/coran2.gif" />
+        <photo source="photos/coran3.gif" />
+    </objet>
+
+    <objet code="man2">
+        <titre>Manuscrit sur peau de Gazelle</titre>
+        <type>Manuscrit</type>
+		<fabriquéEn>
+       	 	<matière>Peau de Gazelle</matière>
+		</fabriquéEn>
+        <siècle>15</siècle>
+        <photo source="photos/manuscrit1.gif"/> 
+    </objet>
+
+</musée>
+
+
